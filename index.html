@@ -1,53 +1,48 @@
-Главная страница
 <!DOCTYPE html>
-<html lamg = "ru">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Семестровая работа</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/styles.css" />
 </head>
 <body>
-        <header>Хеадер</header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="pages/news.html">Новости</a></li>
-                <li><a href="pages/practices.html">Практики</a></li>
-                <li><a href="pages/goods.html">Товары</a></li>
-                <li><a href="pages/contacts.html">Контакты</a></li>
+<div class="page-container">
+    <header class="header">
+        Хэдер
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practice.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
             </ul>
         </nav>
-        <main>
-            <p>Информация об авторе</p>
-            <p>Информация об авторе</p>
-            <img src="images/Falcon.png" alt="Фото автора" width="200"
-            height="250">
+    </header>
+    <main class="content">
+        <h1>Главная страница</h1>
+        <section>
+            <h2>Информация об авторе</h2>
+            <img src="images/Falcon.png" alt="Фото автора" width="200" height="250" />
             <p>Узунян Овсеп Норайрович</p>
             <p>ЭФБО-12-24</p>
-            <p>Обо мне: Я родился в Ереване. Рано
-            переехал в Россию в город Ногинск. Занимался разными видами спорта. Сейчас учусь в РТУ МИРЭА</p>
+            <p>Обо мне: Я родился в Ереване. Рано переехал в Россию в город Ногинск. Занимался разными видами спорта. Сейчас учусь в РТУ МИРЭА</p>
+        </section>
+        <section>
+            <h2>Навыки</h2>
             <div>Навык 1</div>
             <div>Навык 2</div>
             <div>Навык 3</div>
             <div>Навык 4</div>
+        </section>
+        <section>
+            <h2>Мой опыт работы</h2>
             <div>
-                Мой опыт работы:
-                <div>
-                Опыт 1<br>
-                Работал фантазёром. Сочинял и праздновал.
-                </div>
-                <div>
-                    Опыт 2<br>
-                    Работал воровством. Воровал и продавал.
-                </div>
-                <div>
-                    Опыт 3<br>
-                    Работал рэпером. Читал и пел.
-                </div>
-            </div>
-        </div>
-        </main>
-        <footer>Футер</footer>
+                <strong>Опыт</strong><br>
+                Работал маркетологом. Рекламировал и продавал.
+    </main>
+    <footer class="footer">Футер</footer>
+</div>
 </body>
 </html>

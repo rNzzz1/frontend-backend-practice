@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Товары</title>
+    <link rel="stylesheet" href="../style/styles.css" />
 </head>
 <body>
-    <header>Хэдер</header>
-    <nav>
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </nav>
-
+<div class="page-container">
+    <header class="header">
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practice.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="content">
+        <div>
     <!-- Товар 1 -->
     <div>
-        <img src="imgages/WhiteJacket.jpg" alt="Товар 1" width="150">
+        <img src="../images/wjacket.png" alt="Товар 1" width="150">
         <div>Жакет Falcons белый</div>
         <div>Цена товара - 99 $</div>
     </div>
     <!-- Товар 2 -->
     <div>
-        <img src="img/product2.jpg" alt="Товар 2" width="150">
-        <div>Товар 2</div>
-        <div>Цена товара 2</div>
+        <img src="../images/bjacket.png" alt="Товар 2" width="150">
+        <div>Жакет Falcons черный</div>
+        <div>Цена товара 99 $</div>
     </div>
     <!-- Товар 3 -->
     <div>
-        <img src="img/product3.jpg" alt="Товар 3" width="150">
-        <div>Товар 3</div>
-        <div>Цена товара 3</div>
+        <img src="../images/jersey.png" alt="Товар 3" width="150">
+        <div>Джерси Falcons</div>
+        <div>Цена товара 50 $</div>
     </div>
-
-    <footer>Футер</footer>
+</main>
+<footer class="footer">
+    Футер
+</footer>
+</div>
 </body>
 </html>
