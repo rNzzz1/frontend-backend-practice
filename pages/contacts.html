@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<<<<<<< HEAD
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-=======
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
->>>>>>> dev
   <title>Контакты</title>
   <link rel="stylesheet" href="../style/styles.css"/>
 </head>
@@ -33,11 +27,51 @@
       Адрес электронной почты: mirea@web.ru
     </div>
     <div class="about-me" style="margin-bottom:22px;text-align:center;">
-      Адрес: г. Москва, ул. Проспект Вернадского, 78
+      Телефон горячей линии : +7 (800) 555-35-35
     </div>
+    <div class="about-me" style="margin-bottom:22px;text-align:center;">
+        Время работы
+        Пн-Пт: 9:00 - 18:00
+      </div>
+      <div class="about-me" style="margin-bottom:22px;text-align:center;">
+        Адрес: г. Москва, ул. Проспект Вернадского, 78
+      </div>
     <div style="text-align:center;">
-      <button style="background:#5863f8;color:#fff;border:none;padding:14px 34px;border-radius:28px;font-size:17px;cursor:pointer;transition:background 0.2s;">Позвоните мне</button>
-    </div>
+      <div style="text-align:center;">
+     <button onclick="document.getElementById('feedback-modal').style.display='block';" class="contact-button">Связаться с нами</button>
+
+                <!-- ВСПЛЫВАЮЩЕЕ ОКНО (модальное) -->
+                <div id="feedback-modal" style="display:none;position:fixed;z-index:9999;left:0;top:0;width:100vw;height:100vh;background:rgba(44,62,80,0.5);">
+                <div style="max-width:420px;margin:60px auto;background:white;border-radius:16px;padding:36px 30px 24px 30px;box-shadow:0 5px 32px rgba(44,62,80,0.32);position:relative;">
+                    <h2 class="profile-title" style="margin-top:0;font-size:22px;margin-bottom:20px;">Форма обратной связи</h2>
+                    <form>
+                    <div class="form-group">
+                        <input class="form-input" type="text" placeholder="Имя*" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input" type="tel" placeholder="Телефон*" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-input" type="email" placeholder="Электронная почта*" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-input" required>
+                        <option value="">Категория обращения*</option>
+                        <option value="Общие вопросы">Общие вопросы</option>
+                        <option value="Техническая поддержка">Техническая поддержка</option>
+                        <option value="Жалоба">Жалоба</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-textarea" placeholder="Опишите вашу проблему или вопрос..." required></textarea>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;margin-top:18px;">
+                        <button type="button" onclick="document.getElementById('feedback-modal').style.display='none';" class="contact-button" style="background:linear-gradient(135deg, #e9ecef 0%, #f8f9fa 100%);color:#2c3e50;">Отмена</button>
+                        <button type="submit" class="submit-btn">Отправить</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
   </main>
   <footer class="footer">Футер</footer>
 </div>
