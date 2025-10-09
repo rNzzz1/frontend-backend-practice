@@ -184,3 +184,20 @@ body {
     padding: 30px; /* Внутренние отступы */
     margin-top: 50px; /* Отступ сверху */
 }
+
+/* ===== АДАПТИВНОСТЬ ===== */
+/* Новое: Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+}
+    .skills-grid {
+        grid-template-columns: 1fr;
+}
+    .experience-grid {
+        grid-template-columns: 1fr;
+}
+    main.content {
+        padding: 20px;
+} }
