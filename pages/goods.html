@@ -1,48 +1,47 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Товары</title>
-    <link rel="stylesheet" href="../style/styles.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товары</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-<div class="page-container">
-  <header class="header">
-    Хэдер
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-        <li class="nav-item"><a class="nav-link" href="practice.html">Практики</a></li>
-        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main class="content">
-    <div class="section-title">Наши товары</div>
-    <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
-      <div class="experience-card" style="max-width:220px;text-align:center;">
-        <img src="../images/wjacket.png" alt="Товар 1" style="max-width:95%;border-radius:12px;margin-bottom:13px;">
-        <div class="experience-title">Жакет Falcons белый</div>
-        <div class="experience-desc" style="color:#e74c3c;font-weight:600;">Цена товара - 99 $</div>
+  <div class="page">
+    <header class="header">
+      <nav class="nav nav--main">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+          <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+          <li class="nav__item"><a class="nav__link" href="practice.html">Практика</a></li>
+          <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="content">
+      <div class="section-title">Наши товары</div>
+      <div class="goods">
+        <div class="goods__card">
+          <img class="goods__img" src="../images/wjacket.png" alt="Жакет Falcons белый">
+          <div class="goods__title">Жакет Falcons белый</div>
+          <div class="goods__price">99 $</div>
+        </div>
+        <div class="goods__card">
+          <img class="goods__img" src="../images/bjacket.png" alt="Жакет Falcons черный">
+          <div class="goods__title">Жакет Falcons черный</div>
+          <div class="goods__price">99 $</div>
+        </div>
+        <div class="goods__card">
+          <img class="goods__img" src="../images/jersey.png" alt="Джерси Falcons">
+          <div class="goods__title">Джерси Falcons</div>
+          <div class="goods__price">50 $</div>
+        </div>
       </div>
-      <div class="experience-card" style="max-width:220px;text-align:center;">
-        <img src="../images/bjacket.png" alt="Товар 2" style="max-width:95%;border-radius:12px;margin-bottom:13px;">
-        <div class="experience-title">Жакет Falcons черный</div>
-        <div class="experience-desc" style="color:#e74c3c;font-weight:600;">Цена товара 99 $</div>
-      </div>
-      <div class="experience-card" style="max-width:220px;text-align:center;">
-        <img src="../images/jersey.png" alt="Товар 3" style="max-width:95%;border-radius:12px;margin-bottom:13px;">
-        <div class="experience-title">Джерси Falcons</div>
-        <div class="experience-desc" style="color:#e74c3c;font-weight:600;">Цена товара 50 $</div>
-      </div>
-    </div>
-  </main>
-  <footer class="footer">Футер</footer>
-</div>
+    </main>
+    <footer class="footer">
+      <div class="footer__text">Falcons © 2025</div>
+    </footer>
+  </div>
 </body>
 </html>
-
