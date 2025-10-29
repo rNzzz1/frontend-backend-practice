@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новости</title>
-  <link rel="stylesheet" href="../style/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости Falcons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-  <div class="page">
-    <header class="header">
-      <nav class="nav nav--main">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
-          <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-          <li class="nav__item"><a class="nav__link" href="practice.html">Практика</a></li>
-          <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
-          <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="content">
-      <div class="section-title">Новости</div>
-      <div class="news">
-        <div class="news__card">
-          <div class="news__title">Faze Clan - кик одного из важных игроков</div>
-          <div class="news__desc">29.09.2025 14:41 HLTV<br>Rain покинул команду Faze Clan</div>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-fill me-2"></i>Falcons</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
+                <li class="nav-item"><a class="nav-link active" href="news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practice.html"><i class="bi bi-code-slash me-1"></i>Практика</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html"><i class="bi bi-cart me-1"></i>Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+            </ul>
         </div>
-        <div class="news__card">
-          <div class="news__title">Молодой талант в деле</div>
-          <div class="news__desc">01.09.2025 12:00 HLTV<br>Kyousuke стал игроком Team Falcons</div>
+    </div>
+</nav>
+<main class="container my-4">
+    <section class="mb-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white"><i class="bi bi-newspaper"></i> Новости</div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <h5 class="mb-1"><span class="badge bg-danger me-2">Faze Clan</span>Кик одного из важных игроков</h5>
+                    <p class="mb-0"><span class="text-muted small">29.09.2025 14:41 HLTV</span><br>Rain покинул команду Faze Clan</p>
+                </div>
+                <div class="mb-4">
+                    <h5 class="mb-1"><span class="badge bg-primary me-2">Kyousuke</span>Молодой талант в деле</h5>
+                    <p class="mb-0"><span class="text-muted small">01.09.2025 12:00 HLTV</span><br>Kyousuke стал игроком Team Falcons</p>
+                </div>
+                <div>
+                    <h5 class="mb-1"><span class="badge bg-success me-2">Magisk</span>Ветеран покидает Falcons</h5>
+                    <p class="mb-0"><span class="text-muted small">15.04.2025 17:30 HLTV</span><br>Magisk покидает состав Team Falcons</p>
+                </div>
+            </div>
         </div>
-        <div class="news__card">
-          <div class="news__title">Ветеран покидает Falcons</div>
-          <div class="news__desc">15.04.2025 17:30 HLTV<br>Magisk покидает состав Team Falcons</div>
+    </section>
+</main>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-0">© Falcons 2025</p>
+        <div>
+            <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+            <a href="#" class="text-white text-decoration-none">Вверх</a>
         </div>
-      </div>
-    </main>
-    <footer class="footer">
-      <div class="footer__text">Falcons © 2025</div>
-    </footer>
-  </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

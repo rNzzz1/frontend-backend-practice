@@ -1,57 +1,119 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Falcons</title>
-  <link rel="stylesheet" href="style/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Falcons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
-<body>
-  <div class="page">
-    <header class="header">
-      <nav class="nav nav--main">
-        <ul class="nav__list">
-          <li class="nav__item"><a class="nav__link nav__link--active" href="index.html">Главная</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/practice.html">Практика</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="content">
-      <section class="profile">
-        <img class="profile__photo" src="images/Falcon.png" alt="Falcons Logo">
-        <div class="profile__main">
-          <h2 class="profile__title">Узунян Овсеп Норайрович</h2>
-          <div class="profile__group">ЭФБО-12-24</div>
-          <div class="profile__about">Обо мне: Я родился в Ереване. Рано переехал в Россию в город Ногинск. Занимался разными видами спорта. Сейчас учусь в РТУ МИРЭА.</div>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-fill me-2"></i>Falcons</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/practice.html"><i class="bi bi-code-slash me-1"></i>Практика</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/goods.html"><i class="bi bi-cart me-1"></i>Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="pages/contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+            </ul>
         </div>
-      </section>
-      <section class="skills">
-        <div class="skills__tag">Git & GitHub</div>
-        <div class="skills__tag">Python</div>
-        <div class="skills__tag">MacOS</div>
-        <div class="skills__tag">Работа в команде</div>
-      </section>
-      <section class="experience">
-        <div class="experience__card">
-          <div class="experience__title">Пиар агенство</div>
-          <div class="experience__desc">Работал в пиар агентстве. Рекламировал и продавал.</div>
+    </div>
+</nav>
+<main class="container my-4">
+    <!-- Профиль -->
+    <section class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <div class="row align-items-center">
+                    <div class="col-md-3 text-center mb-3 mb-md-0">
+                        <img src="images/Falcon.png" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" alt="Фото">
+                    </div>
+                    <div class="col-md-9">
+                        <h2 class="card-title h4 text-primary mb-1">Узунян Овсеп Норайрович</h2>
+                        <p class="card-text text-muted mb-2"><i class="bi bi-bookmark-check-fill text-primary"></i> ЭФБО-12-24</p>
+                        <p class="card-text">Обо мне: Я родился в Ереване, рано переехал в Россию (город Ногинск). Занимался разными видами спорта. Сейчас учусь в РТУ МИРЭА.</p>
+                        <div class="d-flex gap-2 flex-wrap mt-2">
+                            <span class="badge bg-primary">Git&nbsp;&amp;&nbsp;GitHub</span>
+                            <span class="badge bg-success">Python</span>
+                            <span class="badge bg-info">MacOS</span>
+                            <span class="badge bg-warning text-dark">Frontend</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="experience__card">
-          <div class="experience__title">Проектная деятельность</div>
-          <div class="experience__desc">Участвовал в создании проекта, который связан с базой данных.</div>
+    </section>
+    <!-- Skills с прогресс-барами -->
+    <section class="mb-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-light">
+                <h3 class="card-title h5 mb-0"><i class="bi bi-tools text-primary"></i> Навыки</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>HTML/CSS</span><span class="text-primary">90%</span></div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>JavaScript</span><span class="text-success">75%</span></div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>Bootstrap</span><span class="text-info">85%</span></div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1"><span>React</span><span class="text-warning">70%</span></div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-warning" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="experience__card">
-          <div class="experience__title">Верстка сайта</div>
-          <div class="experience__desc">Участвовал в создании сайта по части frontend.</div>
+    </section>
+    <!-- Опыт -->
+    <section>
+        <div class="card shadow-sm">
+            <div class="card-header bg-light">
+                <h3 class="card-title h5 mb-0"><i class="bi bi-person-check text-primary"></i> Опыт</h3>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Пиар агентство — рекламировал и продавал.</li>
+                    <li class="list-group-item">Проектная деятельность — участие в базе данных.</li>
+                    <li class="list-group-item">Верстка сайта — работа по frontend.</li>
+                </ul>
+            </div>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="footer__text">Falcons © 2025</div>
-    </footer>
-  </div>
+    </section>
+</main>
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <p class="mb-0">© Falcons 2025</p>
+        <div>
+            <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+            <a href="#" class="text-white text-decoration-none">Вверх</a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
