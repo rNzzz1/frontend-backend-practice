@@ -1,86 +1,393 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты Falcons</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Контакты - Falcons</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+<style>
+  :root[data-theme='light'] {
+    --bg-main: #fff;
+    --text-main: #181818;
+    --navbar-bg: #198754;
+    --navbar-text: #fff;
+    --card-bg: #fff;
+    --card-text: #181818;
+    --modal-bg: #fff;
+    --modal-text: #181818;
+    --form-bg: #fff;
+    --form-text: #181818;
+    --form-border: #dee2e6;
+    --form-placeholder: #6c757d;
+    --theme-btn-bg: #fff;
+    --theme-btn-text: #198754;
+    --theme-btn-border: #fff;
+    --theme-btn-hover-bg: #f8f9fa;
+    --theme-btn-hover-text: #198754;
+  }
+  :root[data-theme='dark'] {
+    --bg-main: #133c21;
+    --text-main: #e9fff1;
+    --navbar-bg: #1e5733;
+    --navbar-text: #8fffc1;
+    --card-bg: #174c2c;
+    --card-text: #e6f9ea;
+    --modal-bg: #1a472b;
+    --modal-text: #e6f9ea;
+    --form-bg: #1a3d26;
+    --form-text: #e6f9ea;
+    --form-border: #2d5c3d;
+    --form-placeholder: #8fffc1;
+    --theme-btn-bg: #8fffc1;
+    --theme-btn-text: #133c21;
+    --theme-btn-border: #8fffc1;
+    --theme-btn-hover-bg: #67e6a1;
+    --theme-btn-hover-text: #133c21;
+  }
+  html, body {
+    background: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+  }
+  .navbar, .footer {
+    background: var(--navbar-bg) !important;
+    color: var(--navbar-text) !important;
+    box-shadow: 0 2px 24px #0003;
+  }
+  .navbar .navbar-brand, .navbar .nav-link,
+  .footer, .footer a {
+    color: var(--navbar-text) !important;
+    transition: color 0.3s;
+  }
+  .card, .card-header, .list-group-item {
+    background: var(--card-bg) !important;
+    color: var(--card-text) !important;
+    border-color: rgba(140,255,200,0.13) !important;
+  }
+  #theme-toggle.btn {
+    background: var(--theme-btn-bg) !important;
+    border: 2px solid var(--theme-btn-border) !important;
+    color: var(--theme-btn-text) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+    transition: all 0.3s ease !important;
+  }
+  #theme-toggle.btn:hover, #theme-toggle.btn:focus {
+    outline: none;
+    background: var(--theme-btn-hover-bg) !important;
+    color: var(--theme-btn-hover-text) !important;
+    border-color: var(--theme-btn-hover-bg) !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2) !important;
+    transform: translateY(-1px);
+  }
+  .contact-btn {
+    transition: transform 0.2s;
+  }
+  .contact-btn:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Стили для модальных окон */
+  .modal-content {
+    background: var(--modal-bg) !important;
+    color: var(--modal-text) !important;
+    border: 1px solid var(--form-border) !important;
+  }
+  .modal-header, .modal-footer {
+    border-color: var(--form-border) !important;
+    background: var(--modal-bg) !important;
+    color: var(--modal-text) !important;
+  }
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+  }
+  [data-theme='light'] .btn-close {
+    filter: none;
+  }
+
+  /* Стили для форм */
+  .form-control, .form-select {
+    background: var(--form-bg) !important;
+    color: var(--form-text) !important;
+    border-color: var(--form-border) !important;
+  }
+  .form-control:focus, .form-select:focus {
+    background: var(--form-bg) !important;
+    color: var(--form-text) !important;
+    border-color: var(--navbar-text) !important;
+    box-shadow: 0 0 0 0.2rem rgba(143, 255, 193, 0.25) !important;
+  }
+  .form-control::placeholder {
+    color: var(--form-placeholder) !important;
+    opacity: 0.7;
+  }
+  .form-label {
+    color: var(--form-text) !important;
+  }
+
+  /* Стили для чекбокса */
+  .form-check-input {
+    background-color: var(--form-bg) !important;
+    border-color: var(--form-border) !important;
+  }
+  .form-check-input:checked {
+    background-color: var(--navbar-bg) !important;
+    border-color: var(--navbar-bg) !important;
+  }
+  .form-check-label {
+    color: var(--form-text) !important;
+  }
+
+  /* Стили для успешного модального окна */
+  .modal-success .modal-header {
+    background: var(--navbar-bg) !important;
+    color: var(--navbar-text) !important;
+  }
+
+  /* Стили для иконок контактов */
+  .bg-primary, .bg-success, .bg-warning, .bg-info {
+    color: white !important;
+  }
+</style>
 </head>
-<body class="bg-light">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-fill me-2"></i>Falcons</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practice.html"><i class="bi bi-code-slash me-1"></i>Практика</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html"><i class="bi bi-cart me-1"></i>Товары</a></li>
-                <li class="nav-item"><a class="nav-link active" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
-            </ul>
-        </div>
-    </div>
+<body>
+<nav class="navbar navbar-expand-lg">
+<div class="container">
+  <a class="navbar-brand" href="../index.html"><i class="bi bi-lightning-fill me-2"></i>Falcons</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <button id="theme-toggle" class="btn ms-3" type="button" title="Сменить тему">
+    <i class="bi bi-moon"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="mainNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
+      <li class="nav-item"><a class="nav-link" href="news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
+      <li class="nav-item"><a class="nav-link" href="practice.html"><i class="bi bi-code-slash me-1"></i>Практика</a></li>
+      <li class="nav-item"><a class="nav-link" href="goods.html"><i class="bi bi-cart me-1"></i>Товары</a></li>
+      <li class="nav-item"><a class="nav-link active" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+    </ul>
+  </div>
+</div>
 </nav>
+
 <main class="container my-4">
-    <section class="mb-5">
-        <div class="card shadow">
-            <div class="card-header bg-success text-white">
-                <i class="bi bi-telephone"></i> Контакты
+  <div class="row">
+    <div class="col-lg-8 mx-auto">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h1 class="card-title h3 mb-4"><i class="bi bi-telephone text-primary me-2"></i>Контакты Falcons</h1>
+          <p class="lead mb-4">Свяжитесь с нами по телефону, электронной почте или через форму обратной связи.</p>
+          
+          <!-- Контактная информация -->
+          <div class="row mb-5">
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary rounded-circle p-3 me-3">
+                  <i class="bi bi-telephone-fill text-white"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Телефон</h5>
+                  <p class="mb-0">+7 (999) 123-45-67</p>
+                </div>
+              </div>
             </div>
-            <div class="card-body">
-                <p><b>Email:</b> mirea@web.ru</p>
-                <p><b>Телефон:</b> +7 (800) 555-35-35</p>
-                <p><b>Время работы:</b> Пн-Пт 9:00–18:00</p>
-                <p><b>Адрес:</b> г. Москва, ул. Проспект Вернадского, 78</p>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-success rounded-circle p-3 me-3">
+                  <i class="bi bi-envelope-fill text-white"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <p class="mb-0">contact@falcons.com</p>
+                </div>
+              </div>
             </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-warning rounded-circle p-3 me-3">
+                  <i class="bi bi-geo-alt-fill text-white"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Адрес</h5>
+                  <p class="mb-0">Москва, Россия</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-info rounded-circle p-3 me-3">
+                  <i class="bi bi-clock-fill text-white"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Время работы</h5>
+                  <p class="mb-0">Пн-Пт: 9:00-18:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Кнопка для открытия формы -->
+          <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+              <i class="bi bi-chat-dots me-2"></i>Написать сообщение
+            </button>
+          </div>
         </div>
-    </section>
-    <section>
-        <div class="card shadow">
-            <div class="card-header bg-primary text-white">
-                <i class="bi bi-envelope"></i> Форма обратной связи
-            </div>
-            <div class="card-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Имя</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="category" class="form-label">Категория обращения</label>
-                        <select class="form-select" id="category" name="category">
-                            <option>Общие вопросы</option>
-                            <option>Техническая поддержка</option>
-                            <option>Жалоба</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Сообщение</label>
-                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success"><i class="bi bi-send"></i> Отправить</button>
-                </form>
-            </div>
-        </div>
-    </section>
-</main>
-<footer class="bg-dark text-white py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <p class="mb-0">© Falcons 2025</p>
-        <div>
-            <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
-            <a href="#" class="text-white text-decoration-none">Вверх</a>
-        </div>
+      </div>
     </div>
+  </div>
+</main>
+
+<!-- Модальное окно формы обратной связи -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">
+          <i class="bi bi-chat-dots text-primary me-2"></i>Форма обратной связи
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Ваше имя *</label>
+            <input type="text" class="form-control" id="name" required placeholder="Введите ваше имя">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email *</label>
+            <input type="email" class="form-control" id="email" required placeholder="example@mail.com">
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Телефон</label>
+            <input type="tel" class="form-control" id="phone" placeholder="+7 (999) 123-45-67">
+          </div>
+          <div class="mb-3">
+            <label for="subject" class="form-label">Тема сообщения</label>
+            <select class="form-select" id="subject">
+              <option value="">Выберите тему</option>
+              <option value="general">Общий вопрос</option>
+              <option value="support">Техническая поддержка</option>
+              <option value="partnership">Сотрудничество</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Сообщение *</label>
+            <textarea class="form-control" id="message" rows="4" required placeholder="Введите ваше сообщение..."></textarea>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="agree" required>
+            <label class="form-check-label" for="agree">
+              Я согласен на обработку персональных данных
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+        <button type="button" class="btn btn-primary" id="submitForm">
+          <i class="bi bi-send me-2"></i>Отправить сообщение
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно успешной отправки -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content modal-success">
+      <div class="modal-header">
+        <h5 class="modal-title" id="successModalLabel">
+          <i class="bi bi-check-circle-fill me-2"></i>Сообщение отправлено
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+      <div class="modal-body text-center py-4">
+        <i class="bi bi-check-circle text-success display-1"></i>
+        <h4 class="mt-3">Спасибо за ваше сообщение!</h4>
+        <p class="mb-0">Мы свяжемся с вами в ближайшее время.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer py-4 mt-5">
+<div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+  <p class="mb-0">© Falcons 2025</p>
+  <div>
+    <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+    <a href="#" class="text-white text-decoration-none">Вверх</a>
+  </div>
+</div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (!themeToggle) return;
+  
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggle.innerHTML = theme === 'dark'
+      ? '<i class="bi bi-sun"></i>'
+      : '<i class="bi bi-moon"></i>';
+  }
+  
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+  
+  themeToggle.onclick = () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'dark' ? 'light' : 'dark');
+  };
+
+  // Обработка формы обратной связи
+  document.getElementById('submitForm').addEventListener('click', function() {
+    const form = document.getElementById('contactForm');
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const agree = document.getElementById('agree').checked;
+
+    // Простая валидация
+    if (!name || !email || !message || !agree) {
+      alert('Пожалуйста, заполните все обязательные поля и согласитесь на обработку данных.');
+      return;
+    }
+
+    // Закрываем текущее модальное окно
+    const contactModal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+    contactModal.hide();
+
+    // Показываем окно успеха
+    setTimeout(() => {
+      const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+      successModal.show();
+      
+      // Очищаем форму
+      form.reset();
+    }, 300);
+  });
+
+  // Автоматическое закрытие окна успеха через 3 секунды
+  document.getElementById('successModal').addEventListener('shown.bs.modal', function() {
+    setTimeout(() => {
+      const successModal = bootstrap.Modal.getInstance(this);
+      successModal.hide();
+    }, 3000);
+  });
+});
+</script>
 </body>
 </html>
